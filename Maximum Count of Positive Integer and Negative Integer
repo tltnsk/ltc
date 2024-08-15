@@ -1,0 +1,36 @@
+// Maximum Count of Positive Integer and Negative Integer
+// Given an array nums sorted in non-decreasing order, return the maximum between the number of positive integers and the number of negative integers.
+// In other words, if the number of positive integers in nums is pos and the number of negative integers is neg, then return the maximum of pos and neg.
+// Note that 0 is neither positive nor negative.
+class Solution{
+    public int maximumCount(int[] nums){
+        int n = nums.length;
+        int pos = 0, neg = 0;
+
+        int start = 0, end = n - 1;
+
+        // first positive
+        while (start <= end){
+            int mid = (start + end) / 2;
+            if (nums[mid] > 0){
+                pos = n - mid;
+                end = mid - 1;
+            }
+            if (nums[mid] <= 0) start = mid + 1;
+        }
+
+        int first = 0, last = n - 1; 
+
+        while (first <= last){
+            int mid = (start + end) / 2;
+            if (nums[mid] < 0){
+                neg = mid + 1;
+                first = mid + 1;
+            }
+            if (nums[mid] >= 0) last = mid - 1;
+            }
+
+        return Math.max(pos, neg);
+        }
+    }
+}
