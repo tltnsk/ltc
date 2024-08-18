@@ -1,0 +1,12 @@
+public ListNode deleteLast(){
+    if (head == null || head.next) return null;
+    ListNode current = head;
+    ListNode prev = null;
+    
+    while (current.next != null){
+        prev = current;
+        current = current.next;
+    }
+    prev.next = null;
+    return current;
+}
