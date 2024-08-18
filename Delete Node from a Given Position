@@ -1,0 +1,14 @@
+public ListNode deleteGivenPosition(int position){
+    if (position == 1) return null;
+    else{
+        ListNode previous = head;
+        int count = 1;
+        
+        while(count < position - 1){
+            previous = previous.next;
+            count++;
+        }
+        ListNode current = previous.next;
+        previous.next = current.next;
+    }
+}
