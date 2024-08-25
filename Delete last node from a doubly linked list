@@ -1,0 +1,13 @@
+if (isEmpty()){
+    throw NoSuchElementException;
+} 
+ListNode temp = tail;
+
+if (head == tail){
+    head = null;
+} else {
+    tail.previous.next = null;
+}
+tail = tail.previous;
+temp.previous = null;
+return temp;
