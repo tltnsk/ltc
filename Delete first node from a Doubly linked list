@@ -1,7 +1,11 @@
 if (isEmpty()){
     throw NoSuchElementException;
+} 
+ListNode temp = head;
+
+if (head == tail){
+    tail = null;
 } else {
-    ListNode temp = head;
     head.next.previous = null;
 }
 head = head.next;
