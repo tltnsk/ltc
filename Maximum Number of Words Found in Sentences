@@ -1,0 +1,11 @@
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+        int maxLength = 0;
+        for (String sentence : sentences){
+            int currLength = sentence.split(" ").length;
+            maxLength = Math.max(maxLength, currLength);
+        }
+            return maxLength;
+    }
+
+}
