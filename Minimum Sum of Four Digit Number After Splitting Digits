@@ -6,3 +6,11 @@ public:
         return digitsArr[0]*10 + digitsArr[3] + digitsArr[1]*10 + digitsArr[2];
     }
 };
+///////////////////////////////////
+class Solution {
+    public int minimumSum(int num) {
+        int [] digitsArr = {num / 1000, num / 100 % 10, num / 10 % 10, num % 10};
+        Arrays.sort(digitsArr);
+        return digitsArr[0]*10 + digitsArr[3] + digitsArr[1]*10 + digitsArr[2];
+    }
+}
