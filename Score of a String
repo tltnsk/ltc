@@ -1,0 +1,10 @@
+class Solution {
+public:
+    int scoreOfString(string s) {
+        int absolute = 0;
+        for (int i = 1; i < s.length(); i++){
+            absolute += abs(s.at(i - 1) - s.at(i));
+        }
+        return absolute;
+    }
+};
